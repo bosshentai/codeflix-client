@@ -1,12 +1,12 @@
 import { loginValidation } from '@/app/lib/validations/loginValidation';
-import { ZodFieldError } from '@/app/lib/validations/zodError';
+import { ZodError } from '@/app/lib/validations/zodError';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const result = loginValidation.safeParse(await request.json());
 
   if (!result.success) {
-    const formattedError = new ZodFieldError(result.error);
+    const formattedError = new ZodError(result.error);
 
     return new NextResponse(JSON.stringify(formattedError), {
       status: 400,

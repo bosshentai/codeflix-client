@@ -1,9 +1,9 @@
-import { ZodError, ZodIssue } from 'zod';
+import { ZodError as Error, ZodIssue } from 'zod';
 
-export class ZodFieldError {
+export class ZodError {
   errors: Record<string, string[]> = {};
 
-  constructor(error: ZodError) {
+  constructor(error: Error) {
     this.formatErrors(error.errors);
   }
 

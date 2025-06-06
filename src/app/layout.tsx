@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} scrollbar-hidden bg-black text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} scrollbar-hidden bg-[#141414] text-white antialiased`}
       >
         {children}
       </body>

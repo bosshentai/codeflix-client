@@ -1,5 +1,5 @@
 'use client';
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent } from 'react';
 import { AuthForm } from '@/app/components/AuthForm';
 import { useRouter } from 'next/navigation';
 
@@ -13,7 +13,7 @@ type ServerError = {
 
 export default function LoginForm() {
   const router = useRouter();
-  const [errors, setErrors] = useState<ServerError>({ error: {} });
+  // const [errors, setErrors] = useState<ServerError>({ error: {} });
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle login logic here
@@ -38,11 +38,11 @@ export default function LoginForm() {
       const payload: ServerError = await response.json();
 
       console.log(payload);
-      setErrors(payload);
+      // setErrors(payload);
     } catch (error) {
       console.error(error);
 
-      setErrors({ error: { undefined: ['An unknown error occurred'] } });
+      // setErrors({ error: { undefined: ['An unknown error occurred'] } });
     }
   };
   return <AuthForm formType='login' onSubmit={handleSubmit} />;

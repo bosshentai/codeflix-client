@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tailwind-scrollbar-hide/v4';
-/* @config "../../tailwind.config.ts"; */
-
+@config '../../tailwind.config.ts';
 .bg-gradient-to-b {
   background-image: linear-gradient(
     to bottom,

@@ -2,7 +2,8 @@ import { Suspense } from 'react';
 import { Banner } from './components/Banner';
 import Header from './components/Header';
 import { MovieRow } from './components/MovieRow';
-import { getFeaturedMovie, getMoviesByGenre } from './service/MovieService';
+import { getFeaturedMovie } from './service/MovieService';
+import { getMoviesByGenre } from './service/MovieQuery';
 
 export default async function Home() {
   const featuredMovie = await getFeaturedMovie('101');
